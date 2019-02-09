@@ -58,6 +58,7 @@ public class BatchProxyInvocationHandler implements InvocationHandler {
                 e = e.getCause();
             }
 
+            Arrays.sort(nonExceptionHandlingMethods);
             if (nonExceptionHandlingMethods == null || Arrays.binarySearch(nonExceptionHandlingMethods, method.getName()) < 0) {
                 if (e instanceof Exception) {
                     if (injectionRefs.getStepContext() != null) {
