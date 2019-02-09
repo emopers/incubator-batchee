@@ -35,9 +35,9 @@ public final class Serializations {
         final ByteArrayOutputStream baos = new ByteArrayOutputStream();
         final ObjectOutputStream oout = new ObjectOutputStream(baos);
         oout.writeObject(theObject);
-        final byte[] data = baos.toByteArray();
         baos.close();
         oout.close();
+        final byte[] data = baos.toByteArray();
         return data;
     }
 
